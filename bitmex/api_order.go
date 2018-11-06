@@ -22,7 +22,7 @@ func (o OrderForm) toValues() url.Values {
 
 func DeleteOrderAll(c Client) (o *Order, err *Error) {
 	o = &Order{}
-	err = c.do(http.MethodDelete, "/oder/all", "", nil, o)
+	err = c.do(http.MethodDelete, "/order/all", "", nil, o)
 	if err != nil {
 		o = nil
 	}
