@@ -30,6 +30,10 @@ func New(host, path, key, secret string) Client {
 	return Client{host, path, key, secret, http.DefaultClient}
 }
 
+func NewProduction(key, secret string) Client {
+	return New("bitmex.com", "/api/v1", key, secret)
+}
+
 func NewTestNet(key, secret string) Client {
 	return New("testnet.bitmex.com", "/api/v1", key, secret)
 }
